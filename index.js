@@ -1,7 +1,17 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-
+const express = require("express");
 const app=express();
+const bodyParser = require("body-parser");
+const cloudinary = require("cloudinary").v2;
+
+
+cloudinary.uploader.upload('monkeyy.webp',{
+    public_id:'monkeyy'
+})
+     .then(uploadResult => console.log(JSON.stringify(uploadResult,null))) 
+     if(error => console.log(error));
+
+
+
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
